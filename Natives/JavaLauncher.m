@@ -1,3 +1,4 @@
+#include <mach/mach.h>
 #include <dirent.h>
 #include <dlfcn.h>
 #include <errno.h>
