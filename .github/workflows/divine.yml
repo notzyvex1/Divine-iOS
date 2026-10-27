@@ -32,6 +32,7 @@ jobs:
       - name: Build ipa
         run: |
           export PATH="$(brew --prefix make)/libexec/gnubin:$(brew --prefix lld)/bin:$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+          make -j1 java PLATFORM=2 BOOTJDK="$JAVA_HOME/bin"
           make -j$(sysctl -n hw.ncpu) package PLATFORM=2 BOOTJDK="$JAVA_HOME/bin"
 
       - uses: actions/upload-artifact@v4
