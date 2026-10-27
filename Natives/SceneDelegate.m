@@ -15,6 +15,7 @@ extern UIWindow *mainWindow;
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
     self.window.frame = windowScene.coordinateSpace.bounds;
+    self.window.tintColor = [UIColor colorWithRed:236/255.0 green:96/255.0 blue:40/255.0 alpha:1];
     mainWindow = self.window;
     launchInitialViewController(self.window);
     [self.window makeKeyAndVisible];

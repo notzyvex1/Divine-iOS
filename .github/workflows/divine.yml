@@ -19,6 +19,13 @@ jobs:
           distribution: zulu
           java-version: '8'
 
+      - name: Use newest Xcode
+        run: |
+          X=$(ls -d /Applications/Xcode_26*.app 2>/dev/null | sort -V | tail -1)
+          [ -n "$X" ] && sudo xcode-select -s "$X"
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+
       - name: Install tools
         run: brew install ldid lld make coreutils
 
